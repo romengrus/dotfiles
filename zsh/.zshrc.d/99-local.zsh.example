@@ -1,0 +1,11 @@
+# 99-local.zsh.example — copy to 99-local.zsh for machine-specific overrides
+#
+# 99-local.zsh is gitignored. Use it for:
+#   - Work-specific PATH entries
+#   - Private tokens or API keys
+#   - Machine-local aliases
+#   - Project-specific functions
+
+# Example:
+# export PATH="$PATH:$HOME/work/bin"
+# alias work='cd ~/work/current-project'
