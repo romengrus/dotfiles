@@ -30,3 +30,11 @@ if [[ -d ~/.zshrc.d ]]; then
     source "$f"
   done
 fi
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
+# Zed
+export PATH=$PATH:/home/rom/.local/zed.app/bin
+
+. "$HOME/.local/bin/env"
