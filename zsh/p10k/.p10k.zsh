@@ -23,8 +23,9 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   prompt_char             # ❯ green (success) / red (failure)
 )
 
-# Right side (minimal): command_duration + time
+# Right side (minimal): virtualenv (conditional) + command_duration + time
 typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
+  virtualenv              # active Python venv — only shown when VIRTUAL_ENV is set
   command_duration        # only shown if >2s
   time                    # 24h clock
 )
@@ -133,6 +134,21 @@ typeset -g POWERLEVEL9K_TIME_FOREGROUND='white'
 typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
 typeset -g POWERLEVEL9K_TIME_ICON='\uF017 '  # 
 typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
+
+# ------------------------------------------------------------------------------
+# virtualenv — only rendered when $VIRTUAL_ENV is set (a venv is active)
+# ------------------------------------------------------------------------------
+
+typeset -g POWERLEVEL9K_VIRTUALENV_BACKGROUND='cyan'
+typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND='black'
+typeset -g POWERLEVEL9K_VIRTUALENV_VISUAL_IDENTIFIER_COLOR='black'
+# Nerd Font python icon (devicons). Falls back to nothing if font lacks it.
+typeset -g POWERLEVEL9K_VIRTUALENV_ICON='\uE73C '
+# Show only the venv name (not the python version) for a clean indicator.
+typeset -g POWERLEVEL9K_VIRTUALENV_CONTENT_EXPANSION='${P9K_CONTENT}'
+# Also show when pyenv is active (without an explicit venv).
+typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=true
+typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
 
 # ------------------------------------------------------------------------------
 # Rainbow separators (angled Powerline-style)

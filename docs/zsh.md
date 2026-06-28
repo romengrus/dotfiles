@@ -170,6 +170,7 @@ Two-line rainbow prompt. Segments:
 
 **Right side (minimal):**
 
+- `virtualenv` — active Python venv name (shown only when a venv is active)
 - `command_duration` — shown only if command took >2 seconds
 - `time` — current time, 24h format
 
